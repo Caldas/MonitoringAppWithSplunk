@@ -72,3 +72,12 @@ body {
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
 }
+
+.element {
+    width: 200px;
+    padding: 20px;
+    background: #0080FF;
+    margin-bottom: 10px;
+    color: white;
+    cursor: pointer;
+}
