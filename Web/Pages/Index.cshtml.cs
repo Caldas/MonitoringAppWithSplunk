@@ -31,11 +31,7 @@ namespace Web.Pages
             if (string.IsNullOrWhiteSpace(userCookieValue))
             {
                 UserName = "Anonymous " + random.Next(0, 10000);
-                var cookieOptions = new CookieOptions
-                {
-                    Expires = DateTime.Now.AddHours(2)
-                };
-                Response.Cookies.Append(applicationOptions.UserCookieName, UserName, cookieOptions);
+                SetUserNameAtCookie();
                 logger.LogInformation($"New user created: `{UserName}`");
             }
             else
@@ -57,7 +53,17 @@ namespace Web.Pages
             if (!string.IsNullOrWhiteSpace(newUserName))
             {
                 UserName = newUserName;
+                SetUserNameAtCookie();
             }
+        }
+
+        private void SetUserNameAtCookie()
+        {
+            var cookieOptions = new CookieOptions
+            {
+                Expires = DateTime.Now.AddHours(2)
+            };
+            Response.Cookies.Append(applicationOptions.UserCookieName, UserName, cookieOptions);
         }
     }
 }
