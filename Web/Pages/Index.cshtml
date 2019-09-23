@@ -5,7 +5,7 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome VTEX @Html.DisplayFor(model => model.UserName)</h1>
+    <h1 class="display-4">Welcome VTEX @Html.DisplayFor(model => model.Username)</h1>
     <p>Learn about us at <a href="https://vtex.com">VTEX.COM</a>.</p>
 </div>
 
@@ -22,8 +22,8 @@
     <div class="container">
         <form method="post">
             <p>
-                If you are not @Html.DisplayFor(model => model.UserName).<br/>
-                Change your name here: <input type="text" id="newUserName" value="@Html.DisplayFor(model => model.UserName)" /><button class="btn btn-default">Change name</button>
+                If you are not @Html.DisplayFor(model => model.Username).<br/>
+                Change your name here: @Html.TextBoxFor(o => o.Username)<button type="submit" class="btn btn-default">Change name</button>
             </p>
         </form>
     </div>
