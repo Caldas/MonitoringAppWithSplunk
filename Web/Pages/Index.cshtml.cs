@@ -52,6 +52,7 @@ namespace Web.Pages
         {
             if (!string.IsNullOrWhiteSpace(newUserName))
             {
+                logger.LogInformation($"User renamed: `{UserName}` is now `{newUserName}`");
                 UserName = newUserName;
                 SetUserNameAtCookie();
             }
