@@ -5,6 +5,26 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome VTEX @Html.DisplayFor(model => model.UserName)</h1>
+    <p>Learn about us at <a href="https://vtex.com">VTEX.COM</a>.</p>
 </div>
+
+<div>
+    <h1>Pressure Tests</h1>
+    <p>
+        This test was designed to test your strenght ;)
+    </p>
+    <h3>Change Pressure</h3>
+    <div class="element" id="el1">0</div>
+</div>
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        <form method="post">
+            <p>
+                If you are not @Html.DisplayFor(model => model.UserName).<br/>
+                Change your name here: <input type="text" id="newUserName" value="@Html.DisplayFor(model => model.UserName)" /><button class="btn btn-default">Change name</button>
+            </p>
+        </form>
+    </div>
+</footer>
