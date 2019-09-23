@@ -22,22 +22,22 @@ namespace Web.Pages
             this.applicationOptions = applicationOptions.Value;
         }
 
-        [DisplayName("Anonymous")]
-        public string UserName { get; set; }
+        [DisplayName("Username")]
+        public string Username { get; set; }
 
         public override void OnPageHandlerExecuting(PageHandlerExecutingContext context)
         {
             var userCookieValue = Request.Cookies[applicationOptions.UserCookieName];
             if (string.IsNullOrWhiteSpace(userCookieValue))
             {
-                UserName = "Anonymous " + random.Next(0, 10000);
+                Username = "Anonymous " + random.Next(0, 10000);
                 SetUserNameAtCookie();
-                logger.LogInformation($"New user created: `{UserName}`");
+                logger.LogInformation($"New user created: `{Username}`");
             }
             else
             {
-                UserName = userCookieValue;
-                logger.LogInformation($"Old user returned: `{UserName}`");
+                Username = userCookieValue;
+                logger.LogInformation($"Old user returned: `{Username}`");
             }
 
             base.OnPageHandlerExecuting(context);
@@ -48,12 +48,12 @@ namespace Web.Pages
             
         }
 
-        public void OnPost(string newUserName)
+        public void OnPost(string username)
         {
-            if (!string.IsNullOrWhiteSpace(newUserName))
+            if (!string.IsNullOrWhiteSpace(username))
             {
-                logger.LogInformation($"User renamed: `{UserName}` is now `{newUserName}`");
-                UserName = newUserName;
+                logger.LogInformation($"User renamed: `{Username}` is now `{username}`");
+                Username = username;
                 SetUserNameAtCookie();
             }
         }
@@ -64,7 +64,7 @@ namespace Web.Pages
             {
                 Expires = DateTime.Now.AddHours(2)
             };
-            Response.Cookies.Append(applicationOptions.UserCookieName, UserName, cookieOptions);
+            Response.Cookies.Append(applicationOptions.UserCookieName, Username, cookieOptions);
         }
     }
 }
