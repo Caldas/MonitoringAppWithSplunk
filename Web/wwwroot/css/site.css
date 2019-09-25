@@ -24,6 +24,18 @@ a {
     border-color: #1861ac;
 }
 
+#Username {
+    height: 2rem;
+    padding-top: 2px;
+}
+
+#Username-submit {
+    border: solid 1px #ddd;
+    margin-left: 1rem;
+    height: 2rem;
+    padding-top: 2px;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
