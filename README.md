@@ -1,6 +1,11 @@
 # MonitoringAppWithSplunk
 Sample C# MVC application used to demonstrate how is possible to monitore application using Splunk
 
+## Project
+
+This is a small C# project that log when a new or returning user render the page and also log when user call rename button.
+![image](https://user-images.githubusercontent.com/938045/65654156-3a030e00-dfee-11e9-88fe-af105fd3dabd.png)
+
 ## EventType
 
 4 eventtypes were create: `newuser`, `olduser`, `renamed`, `request`
