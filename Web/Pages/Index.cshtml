@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome VTEX @Html.DisplayFor(model => model.Username)</h1>
+    <p>Learn about us at <a href="https://vtex.com">VTEX.COM</a>.</p>
+</div>
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        <form method="post">
+            <p>
+                Change your name here: <br />
+                @Html.TextBoxFor(model => model.Username)<button id="Username-submit" type="submit" class="btn btn-default">Change name</button>
+            </p>
+        </form>
+    </div>
+</footer>
